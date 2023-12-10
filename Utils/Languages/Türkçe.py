@@ -8,6 +8,8 @@ class Messages():
         "1.1": {"process": "1. String İle İşlem Yap"},
         "1.2": {"process": "2. Dosya İle İşlem Yap  (.txt)"},
 
+        "2": {"process": "2. Txt Dosyasının İçeriğini Göster"},
+
         "C": {"process": "Seçiminiz (1,2,3... Yaz & Enter): "},
 
         "L": {"process": "L. Dil Değiştir"},
@@ -47,6 +49,7 @@ class Messages():
 
         "401": {"message": ".txt Uzantılı Bir Dosya Seçmediniz..."},
         "402": {"message": "İşlem Başarısız Oldu"},
+        "403": {"message": "Dosya Bulunamadı..."},
     }
 
 # endregion

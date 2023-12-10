@@ -43,22 +43,7 @@ class Menus:
 
     # endregion
 
-    # region Language Menu
-        
-    languageMenu = [
-
-        *startMenuPartial,
-
-        {"type" : "Menu",     "text" : "L1", "color" : Fore.BLUE},
-        {"type" : "Menu",     "text" : "L2", "color" : Fore.MAGENTA},
-        {"type" : "Line",     "text" : "*",  "color" : Fore.YELLOW},
-        {"type" : "Menu",     "text" : "E",  "color" : Fore.CYAN},
-        
-        *endMenuPartial
     
-    ]
-
-    # endregion
 
     # region Main Menu
 
@@ -67,6 +52,7 @@ class Menus:
         *startMenuPartial,
 
         {"type" : "Menu",     "text" : "1", "color" : Fore.GREEN},
+        {"type" : "Menu",     "text" : "2", "color" : Fore.GREEN},
         {"type" : "Line",     "text" : "*",  "color" : Fore.YELLOW},
 
         {"type" : "Menu",     "text" : "L", "color" : Fore.CYAN},
@@ -74,8 +60,7 @@ class Menus:
         {"type" : "Menu",     "text" : "E",  "color" : Fore.CYAN},
 
         *endMenuPartial
-
-        
+ 
     ]
 
     # endregion
@@ -93,6 +78,23 @@ class Menus:
 
         *endMenuPartial
 
+    ]
+
+    # endregion
+
+    # region Language Menu
+        
+    languageMenu = [
+
+        *startMenuPartial,
+
+        {"type" : "Menu",     "text" : "L1", "color" : Fore.BLUE},
+        {"type" : "Menu",     "text" : "L2", "color" : Fore.MAGENTA},
+        {"type" : "Line",     "text" : "*",  "color" : Fore.YELLOW},
+        {"type" : "Menu",     "text" : "E",  "color" : Fore.CYAN},
+        
+        *endMenuPartial
+    
     ]
 
     # endregion

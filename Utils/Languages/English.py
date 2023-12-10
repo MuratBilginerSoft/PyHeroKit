@@ -9,6 +9,8 @@ class Messages():
         "1.1": {"process": "1. Transaction with String"},
         "1.2": {"process": "2. Transaction with File (.txt)"},
 
+        "2": {"process": "2. Read Txt File Content"},
+
         "C":  {"process": "Your Choice (1,2,3... Select & Enter): "},
 
         "L":  {"process": "L. Change Language Settings"},
@@ -47,6 +49,7 @@ class Messages():
 
         "401": {"message": "You have not selected a file with the .txt extension..."},
         "402": {"message": "Operation Failed..."},
+        "403": {"message": "The file does not exist"},
     }
 
 # endregion

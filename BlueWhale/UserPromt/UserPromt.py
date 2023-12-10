@@ -3,6 +3,7 @@
 import sys
 
 from BlueWhale.TextUpper.TextUpper import TextUpper
+from BlueWhale.TxtReader.TxtReader import TxtReader
 
 from MidWare.SelectLanguage.SelectLanguage import SelectLanguage
 from MidWare.PrintTerminal.PrintTerminal import PrintTerminal
@@ -38,6 +39,7 @@ class UserPromt:
         self.PrintTerminals = PrintTerminal()
         self.CreatePromts = CreatePromt()
         self.TextUppers = TextUpper()
+        self.TxtReaders = TxtReader()
         self.Messages = EngMessages()
         self.Menus = Menus()
         
@@ -79,6 +81,9 @@ class UserPromt:
         if choice == '1':
 
             self.processOne()
+        
+        elif choice == '2':
+            self.processTwo()
 
         elif choice == 'L' or choice == 'l':
 
@@ -126,6 +131,20 @@ class UserPromt:
             result = self.TextUppers.main(2, None, sourcePath, targetPath)
 
             self.PrintTerminals.normalPrint(f"{self.info[str(result)]['message']} ", Fore.WHITE)
+
+    # endregion
+
+    # region Process One
+
+    def processTwo(self):
+
+        sourcePath = input(f"\n{self.processes['2']['message']}")
+        result = self.TxtReaders.main(sourcePath)
+
+        if isinstance(result, (int, float)):
+            self.PrintTerminals.normalPrint(f"{self.info[str(result)]['message']} ", Fore.WHITE)
+        else:
+            self.PrintTerminals.normalPrint(result, Fore.WHITE)
 
     # endregion
 
