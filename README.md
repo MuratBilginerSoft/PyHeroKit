@@ -1,2 +1,2 @@
 # PyHeroKit
-Ufak Tefek İşlere Hemen Çözüm
+Ufak Tefek İşlere Hızlı Çözüm
