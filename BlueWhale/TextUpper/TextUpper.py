@@ -1,4 +1,14 @@
+# region Import Packages
+
 import os
+
+from MidWare.FileProcess.FileControl.FileControl import FileControl
+from MidWare.FileProcess.FileReader.FileReader import FileReader
+from MidWare.FileProcess.FileCreate.FileCreate import FileCreate
+
+# endregion
+
+from Utils.Sessions.Sessions import Sessions
 
 # region TextUpper Class
 
@@ -14,7 +24,12 @@ class TextUpper:
     # region Init
 
     def __init__(self):
-        pass
+
+        self.FileControls = FileControl()
+        self.FileReaders = FileReader()
+        self.FileCreates = FileCreate()
+        
+        self.__outputMethod = Sessions.outputMethod
 
     # endregion
 
@@ -23,9 +38,26 @@ class TextUpper:
     def main(self, choice=0, text=None, sourcePath=None, targetPath=None):
         
         if choice == 1:
-            return self.stringTextUpper(text)
+
+            if self.__outputMethod == 'Terminal':
+    
+                result = self.stringTextUpper(text)
+                return 202, result
+            
+            elif self.__outputMethod == 'File':
+
+                resultText = self.stringTextUpper(text)
+                fileName = self.FileCreates.main(resultText, 'TextUpper')
+                return 203, fileName
+
+            else:
+                return 402, None
+                
         elif choice == 2:
             return self.fileTextUpper(sourcePath, targetPath)
+        
+        else:
+            return 402, None
 
     # endregion
 
@@ -40,24 +72,26 @@ class TextUpper:
 
     def fileTextUpper(self, sourcePath, targetPath):
 
-        _, extension = os.path.splitext(sourcePath)
+        fileStatus, extensionStatus = self.FileControls.main(sourcePath, '.txt')
 
-        if extension.lower() != '.txt':
-            return 401
+        if fileStatus == 303:
+            return 403, None
+        if extensionStatus == 304:
+            return 401, None
         
+        text = None
+        text = self.FileReaders.txtRead(sourcePath)
+
         try:
-            with open(sourcePath, 'r', encoding="utf-8") as sourceFile:
-                text = sourceFile.read()
         
             resultText = self.turkishUpper(text)
+            self.FileCreates.writeFile(targetPath, resultText)
+            filename = os.path.basename(targetPath)
 
-            with open(targetPath, 'w', encoding="utf-8") as targetFile:
-                targetFile.write(resultText)
-            
-            return 201
+            return 203, filename
 
         except:
-            return 402
+            return 402, None
 
     # endregion
 

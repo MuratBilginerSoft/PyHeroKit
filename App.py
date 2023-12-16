@@ -1,14 +1,22 @@
-from MidWare.ReadLanguageJson.ReadLanguageJson import ReadLanguageJson
-from MidWare.SelectLanguage.SelectLanguage import SelectLanguage
-from BlueWhale.UserPromt.UserPromt import UserPromt
+# region Import Packages
 
-language = ReadLanguageJson().main()
-SelectLanguage.language = language
+from MidWare.FileProcess.ReadConfigJson.ReadConfigJson import ReadConfigJson
+from MidWare.Settings.OutputMethod.OutputMethod import OutputMethod
+from MidWare.Settings.Language.Language import Language
+from Promt.Starter.RunPromt.RunPromt import RunPromt
+
+# endregion
+
+# region Start
+
+language, outputMethod, outputPath = ReadConfigJson().main()
 
 if language not in ['English', 'Türkçe']:
-    
-    SelectLanguage().main()  
-    UserPromt().main()
+    Language().main()
 
-else:
-    UserPromt().main()
+if outputMethod not in ['Terminal', 'File']:
+    OutputMethod().main()
+
+RunPromt().main()
+
+# endregion

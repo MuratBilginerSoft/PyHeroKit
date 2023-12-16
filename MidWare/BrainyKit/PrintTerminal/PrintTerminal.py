@@ -1,4 +1,12 @@
-from colorama import init, Fore, Style
+# region Import Packages
+
+from colorama import init, Fore
+
+init(autoreset=True)
+
+# endregion
+
+# region PrintTerminal Class
 
 class PrintTerminal:
 
@@ -21,7 +29,6 @@ class PrintTerminal:
         PrintTerminal.main("Hello, World!", Fore.RED)
 
     """
-
     # endregion
 
     # region Init
@@ -38,6 +45,10 @@ class PrintTerminal:
         message = message.ljust(count)
         message = message[:count-1] + '*' + message[count:]
         print(color + message)
+    
+    # endregion
+        
+    # region Normal Print
 
     def normalPrint(self, message, color=Fore.RESET):
 
@@ -45,3 +56,5 @@ class PrintTerminal:
         print(color + str(message))
     
     # endregion
+
+# endregion

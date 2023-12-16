@@ -1,15 +1,18 @@
 # region Import Packages
 
+import string
+
 from MidWare.FileProcess.FileControl.FileControl import FileControl
 from MidWare.FileProcess.FileReader.FileReader import FileReader
 from MidWare.FileProcess.FileCreate.FileCreate import FileCreate
+from MidWare.BrainyKit.Message.Message import Message
 from Utils.Sessions.Sessions import Sessions
 
 # endregion
 
-# region TxtReader Class
+# region TextCounter Class
 
-class TxtReader:
+class TextCounter:
 
     # region DocString
 
@@ -21,45 +24,45 @@ class TxtReader:
     # region Init
 
     def __init__(self):
-
+        
         # region Create Objects
 
         self.FileControls = FileControl()
-        self.FileReaders = FileReader()
         self.FileCreates = FileCreate()
+        self.FileReaders = FileReader()
+        self.Messages = Message()
 
         # endregion
 
         # region Set Sessions
 
         self.__outputMethod = Sessions.outputMethod
-
+        
         # endregion
 
     # endregion
 
     # region Main
 
-    def main(self, sourcePath=None):
+    def main(self, text=""):
 
-        return self.txtReader(sourcePath)
+        return self.countLetter(text)
 
     # endregion
 
     # region Txt Reader
 
-    def txtReader(self, sourcePath): 
+    def countLetter(self, text): 
 
-        fileStatus, extensionStatus = self.FileControls.main(sourcePath, '.txt')
-
-        if fileStatus == 303:
-            return 403, None
-        if extensionStatus == 304:
-            return 401, None
+        _, system, _, _ = self.Messages.messageLanguage()
 
         try:
-            text = None
-            text = self.FileReaders.txtRead(sourcePath)
+            allCharacters = len(text)
+            letters = len([c for c in text if c.isalpha()])
+            spaces = text.count(' ')
+            punctuation = len([c for c in text if c in string.punctuation])
+
+            text = f"{'*'*50}\n\n{system['8']['message']}{allCharacters}\n{system['9']['message']}{letters}\n{system['10']['message']}{spaces}\n{system['11']['message']}{punctuation}\n\n{'*'*30}\n\n{text}"
 
             if self.__outputMethod == 'Terminal':
 
@@ -67,12 +70,13 @@ class TxtReader:
             
             elif self.__outputMethod == 'File':
 
-                return 202, text
+                fileName = self.FileCreates.main(text, 'Letter Counter')
+                return 203, fileName
         
             else:
                 return 402, None
-
-        except:
+        
+        except Exception:
             return 402, None
 
     # endregion

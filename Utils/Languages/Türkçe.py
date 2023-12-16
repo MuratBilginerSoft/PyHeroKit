@@ -9,15 +9,23 @@ class Messages():
         "1.2": {"process": "2. Dosya İle İşlem Yap  (.txt)"},
 
         "2": {"process": "2. Txt Dosyasının İçeriğini Göster"},
+        "3": {"process": "3. String Karakter Sayısı Bul"},
 
         "C": {"process": "Seçiminiz (1,2,3... Yaz & Enter): "},
 
         "L": {"process": "L. Dil Değiştir"},
+        "O": {"process": "O. Output Method Değiştir"},
+
+        
 
         "L1": {"process": "1. English"},
         "L2": {"process": "2. Türkçe"},
 
-        "LE": {"process": "Bir Dil Seçin (1 or 2 & Enter): "},
+        "O1": {"process": "1. Terminal"},
+        "O2": {"process": "2. File"},
+
+        "LE": {"process": "Lütfen Bir Dil Seçiniz (1 or 2 & Enter): "},
+        "OE": {"process": "Lütfen Çıktı Methodu Seçiniz (1 or 2 & Enter): "},
 
         "E": {"process": "Kapatmak için Enter Tuşuna Basın..."},
 
@@ -32,6 +40,7 @@ class Messages():
             "1": {"message": "Dönüştürülecek String İfadenizi Girin: "},
             "2": {"message": "Kaynak Dosya Yolunu Girin: "},
             "3": {"message": "Hedef Dosya Yolunu Girin: "},
+            "4": {"message": "String İfadenizi Girin: "},
     }
 
     system = {
@@ -40,16 +49,25 @@ class Messages():
         "2": {"message": "Geçersiz Seçim..."},
         "3": {"message": "İşlem Tamamlandı..."},
         "4": {"message": "Dil Türkçe Olarak Değiştirildi..."},
-        "5": {"message": "Program Kapandı..."}
+        "5": {"message": "Program Kapandı..."},
+        "6": {"message": "Çıktı Yöntemi"},
+        "7": {"message": "Dil"},
+        "8": {"message": "Karakter Sayısı: "},
+        "9": {"message": "Harf Sayısı: "},
+        "10": {"message": "Boşluk Sayısı: "},
+        "11": {"message": "Noktalama İşareti Sayısı: "},
     }
 
     info = {
 
         "201": {"message": "İşlem Başarıyla Gerçekleştirildi"},
+        "202": {"message": "Dosya Okundu"},
+        "203": {"message": "Dosyanız Oluşturuldu"},
 
         "401": {"message": ".txt Uzantılı Bir Dosya Seçmediniz..."},
         "402": {"message": "İşlem Başarısız Oldu"},
         "403": {"message": "Dosya Bulunamadı..."},
+        
     }
 
 # endregion

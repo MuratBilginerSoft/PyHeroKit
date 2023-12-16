@@ -8,7 +8,7 @@ init(autoreset=True)
 
 # region Menus Class
 
-class Menus:
+class Menu:
 
     # region Init
 
@@ -25,8 +25,6 @@ class Menus:
         {"type" : "Line",     "text" : "*",  "color" : Fore.YELLOW},
         {"type" : "System",   "text" : "1",  "color" : Fore.YELLOW},
         {"type" : "Line",     "text" : "*",  "color" : Fore.YELLOW},
-
-        
 
     ]
 
@@ -53,9 +51,11 @@ class Menus:
 
         {"type" : "Menu",     "text" : "1", "color" : Fore.GREEN},
         {"type" : "Menu",     "text" : "2", "color" : Fore.GREEN},
+        {"type" : "Menu",     "text" : "3", "color" : Fore.GREEN},
         {"type" : "Line",     "text" : "*",  "color" : Fore.YELLOW},
 
         {"type" : "Menu",     "text" : "L", "color" : Fore.CYAN},
+        {"type" : "Menu",     "text" : "O", "color" : Fore.LIGHTRED_EX},
         {"type" : "Line",     "text" : "*",  "color" : Fore.YELLOW},
         {"type" : "Menu",     "text" : "E",  "color" : Fore.CYAN},
 
@@ -88,8 +88,31 @@ class Menus:
 
         *startMenuPartial,
 
+        {"type" : "System",   "text" : "7",  "color" : Fore.YELLOW},
+        {"type" : "Line",     "text" : "*",  "color" : Fore.YELLOW},
+        
         {"type" : "Menu",     "text" : "L1", "color" : Fore.BLUE},
         {"type" : "Menu",     "text" : "L2", "color" : Fore.MAGENTA},
+        {"type" : "Line",     "text" : "*",  "color" : Fore.YELLOW},
+        {"type" : "Menu",     "text" : "E",  "color" : Fore.CYAN},
+        
+        *endMenuPartial
+    
+    ]
+
+    # endregion
+
+    # region Language Menu
+        
+    outputMethodMenu = [
+
+        *startMenuPartial,
+
+        {"type" : "System",   "text" : "6",  "color" : Fore.YELLOW},
+        {"type" : "Line",     "text" : "*",  "color" : Fore.YELLOW},
+
+        {"type" : "Menu",     "text" : "O1", "color" : Fore.BLUE},
+        {"type" : "Menu",     "text" : "O2", "color" : Fore.MAGENTA},
         {"type" : "Line",     "text" : "*",  "color" : Fore.YELLOW},
         {"type" : "Menu",     "text" : "E",  "color" : Fore.CYAN},
         
