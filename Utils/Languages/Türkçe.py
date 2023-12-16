@@ -11,6 +11,7 @@ class Messages():
         "2": {"process": "2. Txt Dosyasının İçeriğini Göster"},
         "3": {"process": "3. String Karakter Sayısı Bul"},
         "4": {"process": "4. Klasör İçeriğini Göster"},
+        "5": {"process": "5. Klasördeki İstediğim Uzantılı Dosyaları Sil"},
 
         "C": {"process": "Seçiminiz (1,2,3... Yaz & Enter): "},
 
@@ -34,6 +35,8 @@ class Messages():
 
         "G": {"process": "Geri Dmek İçin (G or g & Enter) - Kapatmak İçin (Enter): "},
 
+        "S": {"process": "Yukarıdaki Dosyalarınız Silme İşleminden Etkilenecek Devam Etmek İstiyor Musunuz? (E or e & Enter): "},
+
     }
 
     process = {
@@ -43,6 +46,7 @@ class Messages():
             "3": {"message": "Hedef Dosya Yolunu Girin: "},
             "4": {"message": "String İfadenizi Girin: "},
             "5": {"message": "Klasör Yolunu Girin: "},
+            "6": {"message": "Dosya Uzantısını Girin(png gibi): "},
     }
 
     system = {
@@ -58,10 +62,12 @@ class Messages():
         "9": {"message": "Harf Sayısı: "},
         "10": {"message": "Boşluk Sayısı: "},
         "11": {"message": "Noktalama İşareti Sayısı: "},
-        "12" : {"message": "Klasör Sayısı: "},
-        "13" : {"message": "Dosya Sayısı: "},
-        "14" : {"message": "Dosya Türleri: "},
+        "12": {"message": "Klasör Sayısı: "},
+        "13": {"message": "Dosya Sayısı: "},
+        "14": {"message": "Dosya Türleri: "},
         "15": {"message": "Dosya Türü Sayısı: "},
+        "16": {"message": "Silinen Dosya Listesi: "},
+        "17": {"message": "Silinecek Dosya Listesi: "},
     }
 
     info = {
@@ -69,20 +75,23 @@ class Messages():
         "201": {"message": "İşlem Başarıyla Gerçekleştirildi"},
         "202": {"message": "Dosya Okundu"},
         "203": {"message": "Dosyanız Oluşturuldu"},
+        "204": {"message": "Dosya Silindi"},
+        
 
         "301": {"message": "İşlem Devam Ediyor Lütfe Bekleyin..."},
+        "302": {"message": "İlerleme: "},
 
         "401": {"message": ".txt Uzantılı Bir Dosya Seçmediniz..."},
         "402": {"message": "İşlem Başarısız Oldu"},
         "403": {"message": "Dosya Bulunamadı..."},
         "404": {"message": "Klasör Bulunamadı..."},
         "405": {"message": "Girilen Yol Bir Klasör Değil..."},
+        "406": {"message": "İşlemden Vazgeçildi..."},
 
 
         "501": {"message": "Taranan Dosya: "},
         "502": {"message": "Taranan Klasör: "},
 
-        
     }
 
 # endregion
