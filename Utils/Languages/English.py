@@ -13,6 +13,7 @@ class Messages():
         "3": {"process": "3. Find String Character Count"},
         "4": {"process": "4. Show Folder Content"},
         "5": {"process": "5. Delete Files With The Extension In The Folder"},
+        "6": {"process": "6. Delete Subfolders In The Folder"},
 
         "C":  {"process": "Your Choice (1,2,3... Select & Enter): "},
 
@@ -46,6 +47,7 @@ class Messages():
         "4": {"message": "Enter your String Expression: "},
         "5": {"message": "Enter Folder Path: "},
         "6": {"message": "Enter File Extension(png etc.): "},
+        "7": {"message": "Enter Folder Name To Delete: "},
     }
 
     system = {
@@ -66,6 +68,9 @@ class Messages():
         "15": {"message": "File Type Count: "},
         "16": {"message": "Deleted File List: "},
         "17": {"message": "File List to Delete: "},
+        "18": {"message": "Folder List to Delete: "},
+        "19": {"message": "Deleted Folder List: "},
+        "20": {"message": "Folder Count: "},
         
     }
 
@@ -75,6 +80,7 @@ class Messages():
         "202": {"message": "File Read"},
         "203": {"message": "File Created"},
         "204": {"message": "File Deleted"},
+        "205": {"message": "Folder Deleted"},
 
         "301": {"message": "Operation Is Continuing Please Wait..."},
         "302": {"message": "Progress: "},
@@ -85,7 +91,6 @@ class Messages():
         "404": {"message": "The Folder Does Not Exist..."},
         "405": {"message": "The Entered Path Is Not A Folder..."},
         "406": {"message": "Operation Aborted..."},
-
 
         "501": {"message": "Scanning File: "},
         "502": {"message": "Scanning Folder: "},
