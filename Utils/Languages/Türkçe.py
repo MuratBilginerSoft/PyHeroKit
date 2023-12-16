@@ -12,6 +12,7 @@ class Messages():
         "3": {"process": "3. String Karakter Sayısı Bul"},
         "4": {"process": "4. Klasör İçeriğini Göster"},
         "5": {"process": "5. Klasördeki İstediğim Uzantılı Dosyaları Sil"},
+        "6": {"process": "6. Klasördeki İstediğim Alt Klasörleri Sil"},
 
         "C": {"process": "Seçiminiz (1,2,3... Yaz & Enter): "},
 
@@ -47,6 +48,7 @@ class Messages():
             "4": {"message": "String İfadenizi Girin: "},
             "5": {"message": "Klasör Yolunu Girin: "},
             "6": {"message": "Dosya Uzantısını Girin(png gibi): "},
+            "7": {"message": "Silinecek Klasör İsmini Girin: "},
     }
 
     system = {
@@ -68,6 +70,9 @@ class Messages():
         "15": {"message": "Dosya Türü Sayısı: "},
         "16": {"message": "Silinen Dosya Listesi: "},
         "17": {"message": "Silinecek Dosya Listesi: "},
+        "18": {"message": "Silinecek Klasör Listesi: "},
+        "19": {"message": "Silinen Klasör Listesi: "},
+        "20": {"message": "Klasör Sayısı: "},
     }
 
     info = {
@@ -76,6 +81,7 @@ class Messages():
         "202": {"message": "Dosya Okundu"},
         "203": {"message": "Dosyanız Oluşturuldu"},
         "204": {"message": "Dosya Silindi"},
+        "205": {"message": "Klasör Silindi"},
         
 
         "301": {"message": "İşlem Devam Ediyor Lütfe Bekleyin..."},

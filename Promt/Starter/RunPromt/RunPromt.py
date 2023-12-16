@@ -5,7 +5,9 @@ import sys
 from Promt.Starter.PrintPromt.PrintPromt import PrintPromt
 
 from Promt.Process.FileTypeCounterPromt.FileTypeCounterPromt import FileTypeCounterPromt
+from Promt.Process.DeleteSubfolderPromt.DeleteSubfolderPromt import DeleteSubfolderPromt
 from Promt.Process.DeleteExtFilePromt.DeleteExtFilePromt import DeleteExtFilePromt
+
 
 from Promt.Process.TextCounterPromt.TextCounterPromt import TextCounterPromt
 from Promt.Process.TextUpperPromt.TextUpperPromt import TextUpperPromt
@@ -44,6 +46,7 @@ class RunPromt:
 
         # region Create Objects
 
+        self.DeleteSubfolderPromts = DeleteSubfolderPromt()
         self.FileTypeCounterPromts = FileTypeCounterPromt()
         self.DeleteExtFilePromts = DeleteExtFilePromt()
         self.TextCounterPromts = TextCounterPromt()
@@ -130,6 +133,15 @@ class RunPromt:
         elif choice == '5':
 
             self.DeleteExtFilePromts.main()
+        
+        # endregion
+            
+
+        # region Delete Subfolder
+            
+        elif choice == '6':
+
+            self.DeleteSubfolderPromts.main()
         
         # endregion
 
