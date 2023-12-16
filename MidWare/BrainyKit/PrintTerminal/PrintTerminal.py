@@ -1,5 +1,5 @@
 # region Import Packages
-
+import time
 from colorama import init, Fore
 
 init(autoreset=True)
@@ -56,5 +56,14 @@ class PrintTerminal:
         print(color + str(message))
     
     # endregion
+    
+    # region Same Line Print
+        
+    def sameLinePrint(self, message, color=Fore.RESET):
 
+        print(f"\r{color}{str(message)}", end="")
+        time.sleep(0.2)
+
+    # endregion
+        
 # endregion

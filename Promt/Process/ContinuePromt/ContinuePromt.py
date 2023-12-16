@@ -1,5 +1,6 @@
 # region Import Packages
 
+import sys
 from colorama import init, Fore
 
 from MidWare.BrainyKit.PrintTerminal.PrintTerminal import PrintTerminal
@@ -38,6 +39,7 @@ class ContinuePromt:
 
         if status == '':
             self.PrintTerminals.normalPrint(f"{system['5']['message']} ", Fore.RED)
+            sys.exit()
         else:
             from Promt.Starter.RunPromt.RunPromt import RunPromt
             RunPromt().main()

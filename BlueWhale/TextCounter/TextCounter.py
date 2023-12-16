@@ -62,7 +62,7 @@ class TextCounter:
             spaces = text.count(' ')
             punctuation = len([c for c in text if c in string.punctuation])
 
-            text = f"{'*'*50}\n\n{system['8']['message']}{allCharacters}\n{system['9']['message']}{letters}\n{system['10']['message']}{spaces}\n{system['11']['message']}{punctuation}\n\n{'*'*30}\n\n{text}"
+            text = f"{'*'*30}\n\n{system['8']['message']}{allCharacters}\n{system['9']['message']}{letters}\n{system['10']['message']}{spaces}\n{system['11']['message']}{punctuation}\n\n{'*'*30}\n\n{text}"
 
             if self.__outputMethod == 'Terminal':
 

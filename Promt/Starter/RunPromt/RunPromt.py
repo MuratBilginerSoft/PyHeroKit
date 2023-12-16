@@ -4,6 +4,7 @@ import sys
 
 from Promt.Starter.PrintPromt.PrintPromt import PrintPromt
 
+from Promt.Process.FileTypeCounterPromt.FileTypeCounterPromt import FileTypeCounterPromt
 from Promt.Process.TextCounterPromt.TextCounterPromt import TextCounterPromt
 from Promt.Process.TextUpperPromt.TextUpperPromt import TextUpperPromt
 from Promt.Process.TxtReaderPromt.TxtReaderPromt import TxtReaderPromt
@@ -41,6 +42,7 @@ class RunPromt:
 
         # region Create Objects
 
+        self.FileTypeCounterPromts = FileTypeCounterPromt()
         self.TextCounterPromts = TextCounterPromt()
         self.TextUpperPromts = TextUpperPromt()
         self.TxtReaderPromts = TxtReaderPromt()
@@ -110,6 +112,13 @@ class RunPromt:
             
         elif choice == '3':
             self.TextCounterPromts.main()  
+        
+        # endregion
+            
+        # region File Type Counter
+            
+        elif choice == '4':
+            self.FileTypeCounterPromts.main()
         
         # endregion
 

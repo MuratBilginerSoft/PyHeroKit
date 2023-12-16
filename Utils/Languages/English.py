@@ -11,6 +11,7 @@ class Messages():
 
         "2": {"process": "2. Read Txt File Content"},
         "3": {"process": "3. Find String Character Count"},
+        "4": {"process": "4. Show Folder Content"},
 
         "C":  {"process": "Your Choice (1,2,3... Select & Enter): "},
 
@@ -40,6 +41,7 @@ class Messages():
         "2": {"message": "Enter Source File Path: "},
         "3": {"message": "Enter Target File Path: "},
         "4": {"message": "Enter your String Expression: "},
+        "5": {"message": "Enter Folder Path: "},
     }
 
     system = {
@@ -54,6 +56,9 @@ class Messages():
         "9": {"message": "Letter Count: "},
         "10": {"message": "Space Count: "},
         "11": {"message": "Punctuation Count: "},
+        "12" : {"message": "Folder Count: "},
+        "13" : {"message": "File Count: "},
+        "14": {"message": "File Type: "},
         
     }
 
@@ -63,9 +68,16 @@ class Messages():
         "202": {"message": "File Read"},
         "203": {"message": "File Created"},
 
+        "301": {"message": "Operation Is Continuing Please Wait..."},
+
         "401": {"message": "You have not selected a file with the .txt extension..."},
         "402": {"message": "Operation Failed..."},
-        "403": {"message": "The file does not exist"},
+        "403": {"message": "The File Does Not Exist..."},
+        "404": {"message": "The Folder Does Not Exist..."},
+        "405": {"message": "The Entered Path Is Not A Folder..."},
+
+        "501": {"message": "Scanning File: "},
+        "502": {"message": "Scanning Folder: "},
     }
 
 # endregion
