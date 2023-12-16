@@ -5,6 +5,8 @@ import sys
 from Promt.Starter.PrintPromt.PrintPromt import PrintPromt
 
 from Promt.Process.FileTypeCounterPromt.FileTypeCounterPromt import FileTypeCounterPromt
+from Promt.Process.DeleteExtFilePromt.DeleteExtFilePromt import DeleteExtFilePromt
+
 from Promt.Process.TextCounterPromt.TextCounterPromt import TextCounterPromt
 from Promt.Process.TextUpperPromt.TextUpperPromt import TextUpperPromt
 from Promt.Process.TxtReaderPromt.TxtReaderPromt import TxtReaderPromt
@@ -43,6 +45,7 @@ class RunPromt:
         # region Create Objects
 
         self.FileTypeCounterPromts = FileTypeCounterPromt()
+        self.DeleteExtFilePromts = DeleteExtFilePromt()
         self.TextCounterPromts = TextCounterPromt()
         self.TextUpperPromts = TextUpperPromt()
         self.TxtReaderPromts = TxtReaderPromt()
@@ -121,6 +124,14 @@ class RunPromt:
             self.FileTypeCounterPromts.main()
         
         # endregion
+            
+        # region Delete Ext File
+            
+        elif choice == '5':
+
+            self.DeleteExtFilePromts.main()
+        
+        # endregion
 
         # region Change Language
             
@@ -150,7 +161,7 @@ class RunPromt:
         
         # region Continue Process
             
-        self.ContinuePromts.main()
+        self.ContinuePromts.main(choice)
         
         # endregion
 

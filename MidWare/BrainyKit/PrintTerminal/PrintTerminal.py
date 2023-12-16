@@ -60,10 +60,16 @@ class PrintTerminal:
     # region Same Line Print
         
     def sameLinePrint(self, message, color=Fore.RESET):
-
+        
         print(f"\r{color}{str(message)}", end="")
-        time.sleep(0.2)
+        time.sleep(0.1)
 
     # endregion
+        
+    def progressPrint(self, count, color=Fore.RESET):
+        
+        print("\r" + " " * 200, end="")
+        print(f"\r{color}Progress: {count}%", end="")
+        time.sleep(0.1)
         
 # endregion

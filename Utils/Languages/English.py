@@ -12,6 +12,7 @@ class Messages():
         "2": {"process": "2. Read Txt File Content"},
         "3": {"process": "3. Find String Character Count"},
         "4": {"process": "4. Show Folder Content"},
+        "5": {"process": "5. Delete Files With The Extension In The Folder"},
 
         "C":  {"process": "Your Choice (1,2,3... Select & Enter): "},
 
@@ -29,9 +30,11 @@ class Messages():
 
         "E":  {"process": "Press Enter Key To Close"},
 
-        "D":  {"process": "To Continue (D or d & Enter) or To Exit (Enter): "},
+        "D":  {"process": "Home (A or a) - Same Operation (D or d & Enter) -  Close (Enter):"},
 
         "G": {"process": "To go back (G or g & Enter) - To close (Enter):"},
+
+        "S": {"process": "Your Files Above Will Be Affected by Deletion Do You Want to Continue (E or e & Enter): "},
 
     }
 
@@ -42,6 +45,7 @@ class Messages():
         "3": {"message": "Enter Target File Path: "},
         "4": {"message": "Enter your String Expression: "},
         "5": {"message": "Enter Folder Path: "},
+        "6": {"message": "Enter File Extension(png etc.): "},
     }
 
     system = {
@@ -59,6 +63,9 @@ class Messages():
         "12" : {"message": "Folder Count: "},
         "13" : {"message": "File Count: "},
         "14": {"message": "File Type: "},
+        "15": {"message": "File Type Count: "},
+        "16": {"message": "Deleted File List: "},
+        "17": {"message": "File List to Delete: "},
         
     }
 
@@ -67,14 +74,18 @@ class Messages():
         "201": {"message": "Operation Successfully Performed"},
         "202": {"message": "File Read"},
         "203": {"message": "File Created"},
+        "204": {"message": "File Deleted"},
 
         "301": {"message": "Operation Is Continuing Please Wait..."},
+        "302": {"message": "Progress: "},
 
         "401": {"message": "You have not selected a file with the .txt extension..."},
         "402": {"message": "Operation Failed..."},
         "403": {"message": "The File Does Not Exist..."},
         "404": {"message": "The Folder Does Not Exist..."},
         "405": {"message": "The Entered Path Is Not A Folder..."},
+        "406": {"message": "Operation Aborted..."},
+
 
         "501": {"message": "Scanning File: "},
         "502": {"message": "Scanning Folder: "},

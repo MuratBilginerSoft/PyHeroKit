@@ -59,9 +59,9 @@ class FileTypeCounter:
 
             _, system, _, info = self.Messages.messageLanguage()
 
-            folderCount, fileCount, fileTypes = self.fileCounter(sourcePath)
+            folderCount, fileCount, fileTypes, fileTypeCount = self.fileCounter(sourcePath)
 
-            text = f"{'*'*30}\n\n{system['12']['message']}{folderCount}\n{system['13']['message']}{fileCount}\n{system['14']['message']}{fileTypes}\n\n{'*'*30}\n\n"
+            text = f"{Fore.BLUE + '*'*30 + Fore.RESET}\n\n{system['12']['message']}{folderCount}\n\n{system['13']['message']}{fileCount}\n\n{system['15']['message']}{fileTypeCount}\n\n{system['14']['message']}{fileTypes}\n\n{Fore.BLUE + '*'*30 + Fore.RESET}\n\n"
         
             if Sessions.outputMethod == 'Terminal':
         
@@ -85,7 +85,8 @@ class FileTypeCounter:
         fileCount = 0
         fileTypes = {}
 
-        self.PrintTerminals.normalPrint(f"{info['301']['message']}", Fore.WHITE)
+        self.PrintTerminals.normalPrint(f"{info['301']['message']}\n", Fore.WHITE)
+
 
         for _, dirs, files in os.walk(sourcePath):
             
@@ -101,7 +102,10 @@ class FileTypeCounter:
                 else:
                     fileTypes[file_extension] = 1
 
-        return folderCount, fileCount, fileTypes
+        sortedFileTypes = dict(sorted(fileTypes.items(), key=lambda item: item[1], reverse=True))
+        fileTypeCount = len(fileTypes)
+
+        return folderCount, fileCount, sortedFileTypes, fileTypeCount
 
 
 # endregion
