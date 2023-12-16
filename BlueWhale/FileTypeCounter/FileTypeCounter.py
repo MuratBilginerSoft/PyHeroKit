@@ -61,13 +61,15 @@ class FileTypeCounter:
 
             folderCount, fileCount, fileTypes, fileTypeCount = self.fileCounter(sourcePath)
 
-            text = f"{Fore.BLUE + '*'*30 + Fore.RESET}\n\n{system['12']['message']}{folderCount}\n\n{system['13']['message']}{fileCount}\n\n{system['15']['message']}{fileTypeCount}\n\n{system['14']['message']}{fileTypes}\n\n{Fore.BLUE + '*'*30 + Fore.RESET}\n\n"
-        
             if Sessions.outputMethod == 'Terminal':
+
+                text = f"{Fore.BLUE + '*'*30 + Fore.RESET}\n\n{system['12']['message']}{folderCount}\n\n{system['13']['message']}{fileCount}\n\n{system['15']['message']}{fileTypeCount}\n\n{system['14']['message']}{fileTypes}\n\n{Fore.BLUE + '*'*30 + Fore.RESET}\n\n"
         
                 return 202, text
                 
             elif Sessions.outputMethod == 'File':
+
+                text = f"{'*'*50}\n\n{system['12']['message']}{folderCount}\n\n{system['13']['message']}{fileCount}\n\n{system['15']['message']}{fileTypeCount}\n\n{system['14']['message']}{fileTypes}\n\n{'*'*50}\n\n"
 
                 fileName = self.FileCreates.main(text, 'FileTypeCounter')
                 return 203, fileName
