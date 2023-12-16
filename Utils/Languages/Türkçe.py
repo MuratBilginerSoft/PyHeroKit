@@ -10,6 +10,7 @@ class Messages():
 
         "2": {"process": "2. Txt Dosyasının İçeriğini Göster"},
         "3": {"process": "3. String Karakter Sayısı Bul"},
+        "4": {"process": "4. Klasör İçeriğini Göster"},
 
         "C": {"process": "Seçiminiz (1,2,3... Yaz & Enter): "},
 
@@ -41,6 +42,7 @@ class Messages():
             "2": {"message": "Kaynak Dosya Yolunu Girin: "},
             "3": {"message": "Hedef Dosya Yolunu Girin: "},
             "4": {"message": "String İfadenizi Girin: "},
+            "5": {"message": "Klasör Yolunu Girin: "},
     }
 
     system = {
@@ -56,6 +58,9 @@ class Messages():
         "9": {"message": "Harf Sayısı: "},
         "10": {"message": "Boşluk Sayısı: "},
         "11": {"message": "Noktalama İşareti Sayısı: "},
+        "12" : {"message": "Klasör Sayısı: "},
+        "13" : {"message": "Dosya Sayısı: "},
+        "14" : {"message": "Dosya Türleri: "},
     }
 
     info = {
@@ -64,9 +69,18 @@ class Messages():
         "202": {"message": "Dosya Okundu"},
         "203": {"message": "Dosyanız Oluşturuldu"},
 
+        "301": {"message": "İşlem Devam Ediyor Lütfe Bekleyin..."},
+
         "401": {"message": ".txt Uzantılı Bir Dosya Seçmediniz..."},
         "402": {"message": "İşlem Başarısız Oldu"},
         "403": {"message": "Dosya Bulunamadı..."},
+        "404": {"message": "Klasör Bulunamadı..."},
+        "405": {"message": "Girilen Yol Bir Klasör Değil..."},
+
+
+        "501": {"message": "Taranan Dosya: "},
+        "502": {"message": "Taranan Klasör: "},
+
         
     }
 
