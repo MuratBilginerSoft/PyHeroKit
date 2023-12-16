@@ -29,7 +29,7 @@ class Messages():
 
         "E":  {"process": "Press Enter Key To Close"},
 
-        "D":  {"process": "To Continue (D or d & Enter) or To Exit (Enter): "},
+        "D":  {"process": "Home (A or a) - Same Operation (D or d & Enter) -  Close (Enter):"},
 
         "G": {"process": "To go back (G or g & Enter) - To close (Enter):"},
 
@@ -59,6 +59,7 @@ class Messages():
         "12" : {"message": "Folder Count: "},
         "13" : {"message": "File Count: "},
         "14": {"message": "File Type: "},
+        "15": {"message": "File Type Count: "},
         
     }
 

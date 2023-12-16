@@ -30,7 +30,7 @@ class Messages():
 
         "E": {"process": "Kapatmak için Enter Tuşuna Basın..."},
 
-        "D": {"process": "Devam Etmek İçin (D or d & Enter) - Kapatmak İçin (Enter): "},
+        "D": {"process": "Ana Menü İçin (A or a) - Aynı İşlemi Tekrar Etmek İçin (D or d & Enter) - Kapatmak İçin (Enter): "},
 
         "G": {"process": "Geri Dmek İçin (G or g & Enter) - Kapatmak İçin (Enter): "},
 
@@ -61,6 +61,7 @@ class Messages():
         "12" : {"message": "Klasör Sayısı: "},
         "13" : {"message": "Dosya Sayısı: "},
         "14" : {"message": "Dosya Türleri: "},
+        "15": {"message": "Dosya Türü Sayısı: "},
     }
 
     info = {

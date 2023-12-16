@@ -62,7 +62,6 @@ class PrintTerminal:
     def sameLinePrint(self, message, color=Fore.RESET):
 
         print(f"\r{color}{str(message)}", end="")
-        time.sleep(0.2)
 
     # endregion
         

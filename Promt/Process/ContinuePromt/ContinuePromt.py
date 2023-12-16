@@ -29,21 +29,28 @@ class ContinuePromt:
         
     # region Main
         
-    def main(self):
+    def main(self, choice):
 
         _, system, menu, _ = self.Messages.messageLanguage()
         
-        print("\n")
-
         status = input(f"{menu['D']['process']} ")
 
-        if status == '':
-            self.PrintTerminals.normalPrint(f"{system['5']['message']} ", Fore.RED)
-            sys.exit()
-        else:
+        if status == 'A' or status == 'a':
             from Promt.Starter.RunPromt.RunPromt import RunPromt
             RunPromt().main()
             
+        elif status == 'D' or status == 'd':
+            from Promt.Starter.RunPromt.RunPromt import RunPromt
+            RunPromt().run(choice)
+            
+        elif status == '':
+            self.PrintTerminals.normalPrint(f"{system['5']['message']} ", Fore.RED)
+            sys.exit()
+
+        else:
+            self.PrintTerminals.normalPrint(f"{system['5']['message']} ", Fore.RED)
+            sys.exit()
+              
     # endregion
 
 # endregion                

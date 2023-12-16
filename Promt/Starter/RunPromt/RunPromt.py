@@ -150,7 +150,7 @@ class RunPromt:
         
         # region Continue Process
             
-        self.ContinuePromts.main()
+        self.ContinuePromts.main(choice)
         
         # endregion
 
