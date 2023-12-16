@@ -1,27 +1,6 @@
 # region Import Packages
 
 import sys
-
-from Promt.Starter.PrintPromt.PrintPromt import PrintPromt
-
-from Promt.Process.FileTypeCounterPromt.FileTypeCounterPromt import FileTypeCounterPromt
-from Promt.Process.DeleteSubfolderPromt.DeleteSubfolderPromt import DeleteSubfolderPromt
-from Promt.Process.DeleteExtFilePromt.DeleteExtFilePromt import DeleteExtFilePromt
-
-
-from Promt.Process.TextCounterPromt.TextCounterPromt import TextCounterPromt
-from Promt.Process.TextUpperPromt.TextUpperPromt import TextUpperPromt
-from Promt.Process.TxtReaderPromt.TxtReaderPromt import TxtReaderPromt
-from Promt.Process.ContinuePromt.ContinuePromt import ContinuePromt
-
-from MidWare.BrainyKit.PrintTerminal.PrintTerminal import PrintTerminal
-from MidWare.BrainyKit.Message.Message import Message
-
-from MidWare.Routes.Menu.Menu import Menu
-
-from MidWare.Settings.OutputMethod.OutputMethod import OutputMethod
-from MidWare.Settings.Language.Language import Language
-
 from colorama import init, Fore
 
 init(autoreset=True)
@@ -46,20 +25,6 @@ class RunPromt:
 
         # region Create Objects
 
-        self.DeleteSubfolderPromts = DeleteSubfolderPromt()
-        self.FileTypeCounterPromts = FileTypeCounterPromt()
-        self.DeleteExtFilePromts = DeleteExtFilePromt()
-        self.TextCounterPromts = TextCounterPromt()
-        self.TextUpperPromts = TextUpperPromt()
-        self.TxtReaderPromts = TxtReaderPromt()
-        self.ContinuePromts = ContinuePromt()
-
-        self.PrintTerminals = PrintTerminal()
-        self.OutputMethods = OutputMethod()
-        self.PrintPromts = PrintPromt()
-        self.Languages = Language()
-        self.Messages = Message()
-        self.Menus = Menu()
 
         # endregion
 
@@ -88,7 +53,10 @@ class RunPromt:
 
     def choiceProcess(self):
 
-        self.PrintPromts.main(self.Menus.mainMenu, 80)
+        from Promt.Starter.PrintPromt.PrintPromt import PrintPromt
+        from MidWare.Routes.Menu.Menu import Menu
+
+        PrintPromt().main(Menu().mainMenu, 80)
 
         choice = input(f"{Fore.YELLOW}{self.menu['C']['process']} ")
 
@@ -103,28 +71,36 @@ class RunPromt:
         # region Text Upper
 
         if choice == '1':
-            self.TextUpperPromts.main()
+
+            from Promt.Process.TextUpperPromt.TextUpperPromt import TextUpperPromt
+            TextUpperPromt().main()
         
         # endregion
             
         # region Text Reader
         
         elif choice == '2':
-            self.TxtReaderPromts.main()
+
+            from Promt.Process.TxtReaderPromt.TxtReaderPromt import TxtReaderPromt
+            TxtReaderPromt().main()
         
         # endregion
         
         # region Text Counter
             
         elif choice == '3':
-            self.TextCounterPromts.main()  
+
+            from Promt.Process.TextCounterPromt.TextCounterPromt import TextCounterPromt
+            TextCounterPromt().main()  
         
         # endregion
             
         # region File Type Counter
             
         elif choice == '4':
-            self.FileTypeCounterPromts.main()
+
+            from Promt.Process.FileTypeCounterPromt.FileTypeCounterPromt import FileTypeCounterPromt
+            FileTypeCounterPromt().main()
         
         # endregion
             
@@ -132,7 +108,8 @@ class RunPromt:
             
         elif choice == '5':
 
-            self.DeleteExtFilePromts.main()
+            from Promt.Process.DeleteExtFilePromt.DeleteExtFilePromt import DeleteExtFilePromt
+            DeleteExtFilePromt().main()
         
         # endregion
             
@@ -141,15 +118,17 @@ class RunPromt:
             
         elif choice == '6':
 
-            self.DeleteSubfolderPromts.main()
+            from Promt.Process.DeleteSubfolderPromt.DeleteSubfolderPromt import DeleteSubfolderPromt
+            DeleteSubfolderPromt().main()
         
         # endregion
 
         # region Change Language
             
         elif choice == 'L' or choice == 'l':
-
-            self.Languages.main()
+            
+            from MidWare.Settings.Language.Language import Language
+            Language().main()
             self.main()
         
         # endregion
@@ -158,7 +137,8 @@ class RunPromt:
             
         elif choice == 'O' or choice == 'o':
 
-            self.OutputMethods.main()
+            from MidWare.Settings.OutputMethod.OutputMethod import OutputMethod
+            OutputMethod().main()
             self.main()
         
         # endregion
@@ -166,14 +146,16 @@ class RunPromt:
         # region Exit
             
         else:
-            self.PrintTerminals.normalPrint(f"{self.system['5']['message']} ", Fore.RED)
+
+            from MidWare.BrainyKit.PrintTerminal.PrintTerminal import PrintTerminal
+            PrintTerminal().normalPrint(f"{self.system['5']['message']} ", Fore.RED)
             sys.exit()
         
         # endregion
         
         # region Continue Process
-            
-        self.ContinuePromts.main(choice)
+        from Promt.Process.ContinuePromt.ContinuePromt import ContinuePromt 
+        ContinuePromt().main(choice)
         
         # endregion
 
@@ -182,8 +164,9 @@ class RunPromt:
     # region Message Language    
     
     def MessageLanguage(self):
-
-        self.processes, self.system, self.menu, self.info = self.Messages.messageLanguage()
+        
+        from MidWare.BrainyKit.Message.Message import Message
+        self.processes, self.system, self.menu, self.info = Message().messageLanguage()
     
     # endregion
    
