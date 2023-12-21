@@ -55,6 +55,8 @@ class Menu:
         {"type" : "Menu",     "text" : "4", "color" : Fore.GREEN},
         {"type" : "Menu",     "text" : "5", "color" : Fore.GREEN},
         {"type" : "Menu",     "text" : "6", "color" : Fore.GREEN},
+        {"type" : "Menu",     "text" : "7", "color" : Fore.GREEN},
+
         {"type" : "Line",     "text" : "*",  "color" : Fore.YELLOW},
 
         {"type" : "Menu",     "text" : "L", "color" : Fore.CYAN},

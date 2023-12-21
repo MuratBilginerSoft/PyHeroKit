@@ -13,6 +13,7 @@ class Messages():
         "4": {"process": "4. Klasör İçeriğini Göster"},
         "5": {"process": "5. Klasördeki İstediğim Uzantılı Dosyaları Sil"},
         "6": {"process": "6. Klasördeki İstediğim Alt Klasörleri Sil"},
+        "7": {"process": "7. Klasördeki Dosyların Uzantısını Değiştir"},
 
         "C": {"process": "Seçiminiz (1,2,3... Yaz & Enter): "},
 
@@ -46,9 +47,12 @@ class Messages():
             "2": {"message": "Kaynak Dosya Yolunu Girin: "},
             "3": {"message": "Hedef Dosya Yolunu Girin: "},
             "4": {"message": "String İfadenizi Girin: "},
-            "5": {"message": "Klasör Yolunu Girin: "},
+            "5": {"message": "Klasör Yolunu Girin(C:\\Users\\UserName\\Masaüstü gibi): "},
             "6": {"message": "Dosya Uzantısını Girin(png gibi): "},
             "7": {"message": "Silinecek Klasör İsmini Girin: "},
+            "8": {"message": "Değiştirilecek Dosya Uzantısını Girin(webp gibi): "},
+            "9": {"message": "Yeni Dosya Uzantısını Girin(png gibi): "}, 
+            "10": {"message": "Alt Klasörler Etkilensin mi? (E/H): "},
     }
 
     system = {
@@ -73,6 +77,8 @@ class Messages():
         "18": {"message": "Silinecek Klasör Listesi: "},
         "19": {"message": "Silinen Klasör Listesi: "},
         "20": {"message": "Klasör Sayısı: "},
+        "21": {"message": "Etkilenecek Dosya Listesi: "},
+        "22": {"message": "Etkilenen Dosya Listesi: "},
     }
 
     info = {

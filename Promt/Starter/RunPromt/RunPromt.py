@@ -122,6 +122,15 @@ class RunPromt:
             DeleteSubfolderPromt().main()
         
         # endregion
+            
+        # region Change File Ext
+            
+        elif choice == '7':
+
+            from Promt.Process.ChangeFileExtPromt.ChangeFileExtPromt import ChangeFileExtPromt
+            ChangeFileExtPromt().main()
+        
+        # endregion
 
         # region Change Language
             
