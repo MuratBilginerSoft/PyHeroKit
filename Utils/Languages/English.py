@@ -14,6 +14,7 @@ class Messages():
         "4": {"process": "4. Show Folder Content"},
         "5": {"process": "5. Delete Files With The Extension In The Folder"},
         "6": {"process": "6. Delete Subfolders In The Folder"},
+        "7": {"process": "7. Change File Extension In The Folder"},
 
         "C":  {"process": "Your Choice (1,2,3... Select & Enter): "},
 
@@ -45,9 +46,12 @@ class Messages():
         "2": {"message": "Enter Source File Path: "},
         "3": {"message": "Enter Target File Path: "},
         "4": {"message": "Enter your String Expression: "},
-        "5": {"message": "Enter Folder Path: "},
+        "5": {"message": "Enter Folder Path(C:\\Users\\UserName\\Masaüstü gibi): "},
         "6": {"message": "Enter File Extension(png etc.): "},
         "7": {"message": "Enter Folder Name To Delete: "},
+        "8": {"message": "Enter File Extension To Change(webp etc.): "},
+        "9": {"message": "Enter New File Extension(png etc.): "},
+        "10": {"message": "Should Subfolders Be Affected? (Y/N): "},
     }
 
     system = {
@@ -71,6 +75,8 @@ class Messages():
         "18": {"message": "Folder List to Delete: "},
         "19": {"message": "Deleted Folder List: "},
         "20": {"message": "Folder Count: "},
+        "21": {"message": "To Be Affected File List: "},
+        "22": {"message": "Affected Folder List: "},
         
     }
 
