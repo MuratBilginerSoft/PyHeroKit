@@ -2,7 +2,7 @@
 
 from colorama import init, Fore
 
-from BlueWhale.TxtReader.TxtReader import TxtReader
+from BlueWhale.File.Read.Txt.Txt import ReaderTxt
 
 from Promt.Starter.PrintPromt.PrintPromt import PrintPromt
 
@@ -28,7 +28,7 @@ class TxtReaderPromt:
         self.PrintTerminals = PrintTerminal()
         self.OutputMethods = OutputMethod()
         self.PrintPromts = PrintPromt()
-        self.TxtReaders = TxtReader()
+        self.ReaderTxts = ReaderTxt()
 
         # endregion
 
@@ -48,7 +48,7 @@ class TxtReaderPromt:
     def main(self):
 
         sourcePath = input(f"\n{self.processes['2']['message']}")
-        output, result = self.TxtReaders.main(sourcePath)
+        output, result = self.ReaderTxts.main(sourcePath)
 
         if output == 202:
 

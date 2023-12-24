@@ -2,16 +2,13 @@
 
 from colorama import init, Fore
 
-from BlueWhale.FileTypeCounter.FileTypeCounter import FileTypeCounter
+from BlueWhale.File.General.CounterType.CounterType import CounterType 
 
 from Promt.Starter.PrintPromt.PrintPromt import PrintPromt
 
 from MidWare.BrainyKit.PrintTerminal.PrintTerminal import PrintTerminal
 from MidWare.Settings.OutputMethod.OutputMethod import OutputMethod  
 from MidWare.BrainyKit.Message.Message import Message
-
-from Utils.Sessions.Sessions import Sessions
-
 
 init(autoreset=True)
 
@@ -27,9 +24,9 @@ class FileTypeCounterPromt:
 
         # region Create Objects
         
-        self.FileTypeCounters = FileTypeCounter()
         self.PrintTerminals = PrintTerminal()
         self.OutputMethods = OutputMethod()
+        self.CounterTypes = CounterType()
         self.PrintPromts = PrintPromt()
         self.Messages = Message()
         
@@ -45,7 +42,7 @@ class FileTypeCounterPromt:
 
         folderPath = input(f"\n{processes['5']['message']}")
 
-        output, result = self.FileTypeCounters.main(folderPath)
+        output, result = self.CounterTypes.main(folderPath)
 
         if output == 202:
 

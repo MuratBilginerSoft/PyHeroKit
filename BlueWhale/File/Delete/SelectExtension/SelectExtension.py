@@ -1,7 +1,7 @@
 # region Import Packages
 
 from colorama import init, Fore
-import shutil
+import glob
 import os
 
 from MidWare.FileProcess.FileControl.FileControl import FileControl
@@ -20,9 +20,9 @@ init(autoreset=True)
 
 # endregion
 
-# region DeleteSubfolder Class
+# region DeleteExtFile Class
 
-class DeleteSubfolder:
+class DeleteFileWithExtension:
 
     # region DocString
 
@@ -50,9 +50,9 @@ class DeleteSubfolder:
 
     # region Main
 
-    def main(self, sourcePath=None, folderName=None):
+    def main(self, sourcePath=None, extension=None):
 
-        effectedFolderCount = 0
+        effectedFileCount = 0
         folderStatus = self.FolderControls.main(sourcePath)
 
         if folderStatus == 404:
@@ -65,9 +65,9 @@ class DeleteSubfolder:
 
             _, system, menu, _ = self.Messages.messageLanguage()
 
-            effectedFolderCount, folderList = self.findSubfolder(sourcePath, folderName)
+            effectedFileCount, fileList = self.findFileWithExt(sourcePath, extension)
 
-            text = f"{Fore.BLUE + '*'*30 + Fore.RESET}\n\n{system['18']['message']}{folderList}\n\n{system['20']['message']}{effectedFolderCount}\n\n{Fore.BLUE + '*'*30 + Fore.RESET}\n\n"
+            text = f"{Fore.BLUE + '*'*30 + Fore.RESET}\n\n{system['17']['message']}{fileList}\n\n{system['13']['message']}{effectedFileCount}\n\n{Fore.BLUE + '*'*30 + Fore.RESET}\n\n"
 
             self.PrintTerminals.normalPrint(text, Fore.WHITE)
 
@@ -75,19 +75,19 @@ class DeleteSubfolder:
 
             if decision == 'E' or decision == 'e':
 
-                deletedFolderCount, folderList = self.deleteSubfolder(sourcePath, folderName, effectedFolderCount)
+                deletedFileCount, fileList = self.deleteFileWithExt(sourcePath, extension, effectedFileCount)
 
                 if Sessions.outputMethod == 'Terminal':
 
-                    text = f"{Fore.BLUE + '*'*30 + Fore.RESET}\n\n{system['18']['message']}{folderList}\n\n{system['20']['message']}{deletedFolderCount}\n\n{Fore.BLUE + '*'*30 + Fore.RESET}\n\n"
+                    text = f"{Fore.BLUE + '*'*30 + Fore.RESET}\n\n{system['16']['message']}{fileList}\n\n{system['13']['message']}{deletedFileCount}\n\n{Fore.BLUE + '*'*30 + Fore.RESET}\n\n"
             
                     return 202, text
                     
                 elif Sessions.outputMethod == 'File':
 
-                    text = f"{'*'*40}\n\n{system['18']['message']}{folderList}\n\n{system['20']['message']}{deletedFolderCount}\n\n{'*'*40}\n\n"
+                    text = f"{'*'*40}\n\n{system['16']['message']}{fileList}\n\n{system['13']['message']}{deletedFileCount}\n\n{'*'*40}\n\n"
 
-                    fileName = self.FileCreates.main(text, 'DeleteSubfolder')
+                    fileName = self.FileCreates.main(text, 'DeleteExtFile')
                     return 203, fileName
 
                 else:
@@ -100,48 +100,48 @@ class DeleteSubfolder:
 
     # region Find File With Ext
                 
-    def findSubfolder(self, sourcePath, folderName):
+    def findFileWithExt(self, sourcePath, extension):
 
         _, _, _, info = self.Messages.messageLanguage()
 
         self.PrintTerminals.normalPrint(f"{info['301']['message']}\n", Fore.WHITE)
 
-        effectedFolderCount = 0
-        folderList = []
+        effectedFileCount = 0
+        fileList = []  
 
-        for root, dirs, files in os.walk(sourcePath, topdown=False):
-            for name in dirs:
-                if name == folderName:
-                    folderList.append(os.path.join(root, name))
-                    effectedFolderCount += 1
+        files = glob.glob(f"{sourcePath}/**/*.{extension}", recursive=True)
+
+        for file in files:
+            effectedFileCount += 1
+            filename = os.path.basename(file)
+            fileList.append(filename)
             
-        return effectedFolderCount, folderList
+        return effectedFileCount, fileList
 
     # endregion
 
     # region Delete File With Ext
-
-            
-    def deleteSubfolder(self, sourcePath, folderName, effectedFolderCount):
         
+    def deleteFileWithExt(self, sourcePath, extension, effectedFileCount):
+
         _, _, _, info = self.Messages.messageLanguage()
 
         self.PrintTerminals.normalPrint(f"{info['301']['message']}\n", Fore.WHITE)
 
-        deletedFolderCount = 0 
-        folderList = []
+        deleteFileCount = 0
+        fileList = []  
 
-        for root, dirs, files in os.walk(sourcePath, topdown=False):
-            for name in dirs:
-                if name == folderName:
-                    deletedFolderCount += 1
-                    folderList.append(os.path.join(root, name))
-                    shutil.rmtree(os.path.join(root, name))
-                    progress = int((deletedFolderCount / effectedFolderCount) * 100)
-                    self.PrintTerminals.sameLinePrint(f"{info['302']['message']} %{progress}", Fore.WHITE)
+        files = glob.glob(f"{sourcePath}/**/*.{extension}", recursive=True)
 
+        for file in files:
+            deleteFileCount += 1
+            filename = os.path.basename(file)
+            fileList.append(filename)
+            os.remove(file)
+            progress = int((deleteFileCount / effectedFileCount) * 100)
+            self.PrintTerminals.sameLinePrint(f"{info['302']['message']} %{progress}", Fore.WHITE)
 
-        return deletedFolderCount, folderList
+        return deleteFileCount, fileList
 
     # endregion
 

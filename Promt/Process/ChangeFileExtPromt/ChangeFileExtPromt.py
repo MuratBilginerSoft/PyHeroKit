@@ -2,15 +2,13 @@
 
 from colorama import init, Fore
 
-from BlueWhale.ChangeFileExt.ChangeFileExt import ChangeFileExt
+from BlueWhale.File.Change.Extension.Extension import ChangeFileExtension
 
 from Promt.Starter.PrintPromt.PrintPromt import PrintPromt
 
 from MidWare.BrainyKit.PrintTerminal.PrintTerminal import PrintTerminal
 from MidWare.Settings.OutputMethod.OutputMethod import OutputMethod  
 from MidWare.BrainyKit.Message.Message import Message
-
-from Utils.Sessions.Sessions import Sessions
 
 
 init(autoreset=True)
@@ -27,7 +25,7 @@ class ChangeFileExtPromt:
 
         # region Create Objects
         
-        self.ChangeFileExts = ChangeFileExt()
+        self.ChangeFileExtensions = ChangeFileExtension()
         self.PrintTerminals = PrintTerminal()
         self.OutputMethods = OutputMethod()
         self.PrintPromts = PrintPromt()
@@ -54,7 +52,7 @@ class ChangeFileExtPromt:
         else:
             subFolderStatus = False
 
-        output, result = self.ChangeFileExts.main(folderPath, oldExtension, newExtension, subFolderStatus)
+        output, result = self.ChangeFileExtensions.main(folderPath, oldExtension, newExtension, subFolderStatus)
 
         if output == 202:
 

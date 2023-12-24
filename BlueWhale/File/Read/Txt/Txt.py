@@ -9,7 +9,7 @@ from Utils.Sessions.Sessions import Sessions
 
 # region TxtReader Class
 
-class TxtReader:
+class ReaderTxt:
 
     # region DocString
 

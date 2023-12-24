@@ -10,9 +10,9 @@ from Utils.Sessions.Sessions import Sessions
 
 # endregion
 
-# region TextCounter Class
+# region CharacterCounter Class
 
-class TextCounter:
+class CharacterCounter:
 
     # region DocString
 

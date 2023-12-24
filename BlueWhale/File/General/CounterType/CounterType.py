@@ -22,7 +22,7 @@ init(autoreset=True)
 
 # region FileTypeCounter Class
 
-class FileTypeCounter:
+class CounterType:
 
     # region DocString
 

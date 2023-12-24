@@ -20,9 +20,9 @@ init(autoreset=True)
 
 # endregion
 
-# region DeleteExtFile Class
+# region ChangeFileExtension Class
 
-class ChangeFileExt:
+class ChangeFileExtension:
 
     # region DocString
 
