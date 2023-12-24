@@ -2,15 +2,13 @@
 
 from colorama import init, Fore
 
-from BlueWhale.DeleteExtFile.DeleteExtFile import DeleteExtFile
+from BlueWhale.File.Delete.SelectExtension.SelectExtension import DeleteFileWithExtension
 
 from Promt.Starter.PrintPromt.PrintPromt import PrintPromt
 
 from MidWare.BrainyKit.PrintTerminal.PrintTerminal import PrintTerminal
 from MidWare.Settings.OutputMethod.OutputMethod import OutputMethod  
 from MidWare.BrainyKit.Message.Message import Message
-
-from Utils.Sessions.Sessions import Sessions
 
 
 init(autoreset=True)
@@ -27,7 +25,7 @@ class DeleteExtFilePromt:
 
         # region Create Objects
         
-        self.DeleteExtFiles = DeleteExtFile()
+        self.DeleteFileWitExtensions = DeleteFileWithExtension()
         self.PrintTerminals = PrintTerminal()
         self.OutputMethods = OutputMethod()
         self.PrintPromts = PrintPromt()
@@ -46,7 +44,7 @@ class DeleteExtFilePromt:
         folderPath = input(f"\n{processes['5']['message']}")
         extension = input(f"\n{processes['6']['message']}")
 
-        output, result = self.DeleteExtFiles.main(folderPath, extension)
+        output, result = self.DeleteFileWitExtensions.main(folderPath, extension)
 
         if output == 202:
 

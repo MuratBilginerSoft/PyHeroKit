@@ -2,16 +2,13 @@
 
 from colorama import init, Fore
 
-from BlueWhale.DeleteSubfolder.DeleteSubfolder import DeleteSubfolder
+from BlueWhale.Folder.Delete.SubfolderWName.SubfolderWName import DeleteSubfolderWithName
 
 from Promt.Starter.PrintPromt.PrintPromt import PrintPromt
 
 from MidWare.BrainyKit.PrintTerminal.PrintTerminal import PrintTerminal
 from MidWare.Settings.OutputMethod.OutputMethod import OutputMethod  
 from MidWare.BrainyKit.Message.Message import Message
-
-from Utils.Sessions.Sessions import Sessions
-
 
 init(autoreset=True)
 
@@ -27,7 +24,7 @@ class DeleteSubfolderPromt:
 
         # region Create Objects
         
-        self.DeleteSubfolders = DeleteSubfolder()
+        self.DeleteSubfolders = DeleteSubfolderWithName()
         self.PrintTerminals = PrintTerminal()
         self.OutputMethods = OutputMethod()
         self.PrintPromts = PrintPromt()

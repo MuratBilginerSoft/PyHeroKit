@@ -2,16 +2,13 @@
 
 from colorama import init, Fore
 
-from BlueWhale.TextCounter.TextCounter import TextCounter
+from BlueWhale.Text.CharacterCounter.CharacterCounter import CharacterCounter
 
 from Promt.Starter.PrintPromt.PrintPromt import PrintPromt
 
 from MidWare.BrainyKit.PrintTerminal.PrintTerminal import PrintTerminal
 from MidWare.Settings.OutputMethod.OutputMethod import OutputMethod  
 from MidWare.BrainyKit.Message.Message import Message
-
-from Utils.Sessions.Sessions import Sessions
-
 
 init(autoreset=True)
 
@@ -27,9 +24,9 @@ class TextCounterPromt:
 
         # region Create Objects
 
+        self.CharacterCounters = CharacterCounter()
         self.PrintTerminals = PrintTerminal()
         self.OutputMethods = OutputMethod()
-        self.TextCounters = TextCounter()
         self.PrintPromts = PrintPromt()
         self.Messages = Message()
         
@@ -45,7 +42,7 @@ class TextCounterPromt:
 
         text = input(f"\n{processes['4']['message']}")
 
-        output, result = self.TextCounters.main(text)
+        output, result = self.CharacterCounters.main(text)
 
         if output == 202:
 

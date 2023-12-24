@@ -2,7 +2,7 @@
 
 from colorama import init, Fore
 
-from BlueWhale.TextUpper.TextUpper import TextUpper as BlueWhaleTextUpper
+from BlueWhale.Text.AllLetterUpper.AllLetterUpper import AllLetterUpper
 
 from Promt.Starter.PrintPromt.PrintPromt import PrintPromt
 
@@ -28,7 +28,7 @@ class TextUpperPromt:
 
         # region Create Objects
 
-        self.TextUppers = BlueWhaleTextUpper()
+        self.AllLetterUppers = AllLetterUpper()
         self.PrintTerminals = PrintTerminal()
         self.OutputMethods = OutputMethod()
         self.PrintPromts = PrintPromt()
@@ -60,7 +60,7 @@ class TextUpperPromt:
         if choice == '1':
 
             text = input(f"\n{self.processes['1']['message']}")
-            output, result = self.TextUppers.main(1, text)
+            output, result = self.AllLetterUppers.main(1, text)
 
             if output == 202:
 
@@ -78,7 +78,7 @@ class TextUpperPromt:
             sourcePath = input(f"\n{self.processes['2']['message']}")
             targetPath = input(f"\n{self.processes['3']['message']}")
 
-            output, result = self.TextUppers.main(2, None, sourcePath, targetPath)
+            output, result = self.AllLetterUppers.main(2, None, sourcePath, targetPath)
 
             if output == 203:
 

@@ -12,7 +12,7 @@ from Utils.Sessions.Sessions import Sessions
 
 # region TextUpper Class
 
-class TextUpper:
+class AllLetterUpper:
 
     # region DocString
 
